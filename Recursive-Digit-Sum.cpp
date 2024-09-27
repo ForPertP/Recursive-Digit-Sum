@@ -36,3 +36,25 @@ int superDigit(string n, int k)
     }
 }
 
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string first_multiple_input_temp;
+    getline(cin, first_multiple_input_temp);
+
+    vector<string> first_multiple_input = split(rtrim(first_multiple_input_temp));
+
+    string n = first_multiple_input[0];
+
+    int k = stoi(first_multiple_input[1]);
+
+    int result = superDigit(n, k);
+
+    fout << result << "\n";
+
+    fout.close();
+
+    return 0;
+}
+
