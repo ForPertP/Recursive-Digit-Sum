@@ -15,49 +15,27 @@ vector<string> split(const string &);
  *  2. INTEGER k
  */
 
-int superDigit2(string n, int k) {
-    long long int sum = 0;
+int superDigit(string n, int k) {
+    long long sum = 0;
 
-    for (int i = 0; i < n.size(); ++i)
-    {
-        sum += (n[i] - '0');
+    for (int i = 0; i < n.length(); i++) {
+        sum += n[i] - '0';
     }
 
     sum *= k;
 
-    string p = to_string(sum);
+    while (sum >= 10) {
+        long long newSum = 0;
+        while (sum > 0) {
+            newSum += sum % 10;
+            sum /= 10;
+        }
+        sum = newSum;
+    }
 
-    if (p.length() == 1)
-    {
-        return p[0] - '0';
-    }
-    else
-    {
-        return superDigit(p, 1);
-    }
+    return (int)sum;
 }
 
-
-int superDigit3(string n, int k)
-{
-    long long int sum = 0;
-    
-    for (int i = 0 ; i < n.size() ; ++i)
-    {
-        sum = sum + k * (n[i] - 48);
-    }
-     
-    string p = to_string(sum);    
-
-    if (p.length() == 1)
-    {
-        return(p[0]-48); 
-    }
-    else
-    {
-        return superDigit(p,1);
-    }
-}
 
 int main()
 {
@@ -80,7 +58,6 @@ int main()
 
     return 0;
 }
-
 
 string ltrim(const string &str) {
     string s(str);
@@ -120,5 +97,3 @@ vector<string> split(const string &str) {
 
     return tokens;
 }
-
-
