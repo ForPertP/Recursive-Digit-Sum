@@ -16,24 +16,6 @@ vector<string> split(const string &);
  */
 
 int superDigit(string n, int k) {
-    long long sum = 0;
-
-    for (int i = 0; i < n.length(); i++) {
-        sum += n[i] - '0';
-    }
-
-    sum *= k;
-
-    while (sum >= 10) {
-        long long newSum = 0;
-        while (sum > 0) {
-            newSum += sum % 10;
-            sum /= 10;
-        }
-        sum = newSum;
-    }
-
-    return (int)sum;
 }
 
 
