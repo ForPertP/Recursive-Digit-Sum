@@ -15,7 +15,25 @@ vector<string> split(const string &);
  *  2. INTEGER k
  */
 
-int superDigit(string n, int k) {
+int getSuperDigit(long long num)
+{
+    if (num < 10)
+    {
+        return num;
+    }
+
+    long long newSum = 0;
+    while (num > 0)
+    {
+        newSum += num % 10;
+        num /= 10;
+    }
+
+    return getSuperDigit(newSum);
+}
+
+int superDigit(string n, int k)
+{
 }
 
 
