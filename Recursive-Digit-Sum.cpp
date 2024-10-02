@@ -34,6 +34,15 @@ int getSuperDigit(long long num)
 
 int superDigit(string n, int k)
 {
+    long long sum = 0;
+    for (int i = 0; i < n.size(); i++)
+    {
+        sum += n[i] - '0';
+    }
+
+    sum *= k;
+
+    return getSuperDigit(sum);
 }
 
 
