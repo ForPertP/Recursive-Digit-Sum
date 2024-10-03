@@ -15,18 +15,18 @@ vector<string> split(const string &);
  *  2. INTEGER k
  */
 
-int getSuperDigit(long long num)
+int getSuperDigit(long long sum)
 {
-    if (num < 10)
+    if (sum < 10)
     {
-        return num;
+        return sum;
     }
 
     long long newSum = 0;
-    while (num > 0)
+    while (sum > 0)
     {
-        newSum += num % 10;
-        num /= 10;
+        newSum += sum % 10;
+        sum /= 10;
     }
 
     return getSuperDigit(newSum);
