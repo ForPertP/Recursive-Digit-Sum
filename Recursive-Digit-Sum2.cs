@@ -1,4 +1,3 @@
-Recursive-Digit-Sum
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Collections;
@@ -27,10 +26,29 @@ class Result
 
     public static int superDigit(string n, int k)
     {
+        long sum = 0;
+        for (int i = 0; i < n.Length; i++)
+        {
+            sum += n[i] - '0';
+        }
 
+        sum *= k;
+
+        while (sum >= 10)
+        {
+            long newSum = 0;
+            while (sum > 0)
+            {
+                newSum += sum % 10;
+                sum /= 10;
+            }
+            sum = newSum;
+        }
+
+        return (int)sum;
     }
-
 }
+
 
 class Solution
 {
