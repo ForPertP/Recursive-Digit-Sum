@@ -29,6 +29,24 @@ class Result
         long sum = 0;
         return (int)sum;
     }
+
+    private static int getSuperDigit(long num)
+    {
+        if (num < 10)
+        {
+            return (int)num;
+        }
+
+        long newSum = 0;
+        while (num > 0)
+        {
+            newSum += num % 10;
+            num /= 10;
+        }
+
+
+        return getSuperDigit(newSum);
+    }    
 }
 
 
