@@ -24,19 +24,6 @@ class Result
      *  2. INTEGER k
      */
 
-    public static int superDigit(string n, int k)
-    {
-        long sum = 0;
-        for (int i = 0; i < n.Length; i++)
-        {
-            sum += n[i] - '0';
-        }
-
-        sum *= k;
-
-        return getSuperDigit(sum);
-    }
-
     private static int getSuperDigit(long num)
     {
         if (num < 10)
@@ -51,9 +38,22 @@ class Result
             num /= 10;
         }
 
-
         return getSuperDigit(newSum);
     }
+    
+    public static int superDigit(string n, int k)
+    {
+        long sum = 0;
+        for (int i = 0; i < n.Length; i++)
+        {
+            sum += n[i] - '0';
+        }
+
+        sum *= k;
+
+        return getSuperDigit(sum);
+    }
+    
 }
 
 
