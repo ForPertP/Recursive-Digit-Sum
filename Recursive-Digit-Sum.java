@@ -21,7 +21,6 @@ class Result {
      *  2. INTEGER k
      */
 
-
     private static int getSuperDigit(long num) {
         if (num < 10) {
             return (int) num;
@@ -36,7 +35,6 @@ class Result {
         return getSuperDigit(newSum);
     }
 
-    
     public static int superDigit(String n, int k) {
         long sum = 0;
         for (int i = 0; i < n.length(); i++) {
@@ -45,8 +43,8 @@ class Result {
 
         sum *= k;
 
-        return sum;
-    }    
+        return getSuperDigit(sum);
+    }
 }
 
 
