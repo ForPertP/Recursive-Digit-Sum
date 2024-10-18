@@ -21,6 +21,12 @@ class Result {
      *  2. INTEGER k
      */
 
+    public static int superDigit(String n, int k) {
+        long sum = 0;
+        
+        return (int)sum;
+    }    
+
 }
 
 
