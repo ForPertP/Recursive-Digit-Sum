@@ -24,6 +24,12 @@ class Result {
     public static int superDigit(String n, int k) {
         long sum = 0;
         
+        for (int i = 0; i < n.length(); i++) {
+            sum += n.charAt(i) - '0';
+        }
+
+        sum *= k;
+
         return (int)sum;
     }    
 
