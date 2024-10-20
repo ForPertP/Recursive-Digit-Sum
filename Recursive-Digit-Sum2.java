@@ -30,6 +30,15 @@ class Result {
 
         sum *= k;
 
+        while (sum >= 10) {
+            long newSum = 0;
+            while (sum > 0) {
+                newSum += sum % 10;
+                sum /= 10;
+            }
+            sum = newSum;
+        }
+
         return (int)sum;
     }    
 
